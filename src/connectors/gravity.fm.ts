@@ -9,19 +9,11 @@ Connector.playerSelector = ['.player-content'];
 
 Connector.isPlaying = () => {
 	const playPauseButtonSelector =
-		'.player-content .control-bar .play-pause-btn > svg';
+		'.player-content .control-bar .player-controls .play-icon';
 
 	return (
 		document
 			.querySelector(playPauseButtonSelector)
-			?.getAttribute('data-icon') === 'pause'
+			?.getAttribute('title') === 'Pause'
 	);
-};
-
-Connector.isLoved = () => {
-	const saveButtonSelector = '.player-content .control-bar button.save-btn';
-
-	return document
-		.querySelector<HTMLButtonElement>(saveButtonSelector)
-		?.innerText.includes('SAVED');
 };
